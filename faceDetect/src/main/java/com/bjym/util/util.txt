@@ -1,0 +1,17 @@
+|- 人脸库
+   |- 用户组一
+      |- 用户01
+         |- 人脸
+      |- 用户02
+         |- 人脸
+         |- 人脸
+         ....
+       ....
+   |- 用户组二
+   |- 用户组三
+   |- 用户组四
+   ....
+
+String addGroup(String groupId)   增加组信息
+
+String addUser(File file, String userInfo, String userId, String groupId)  注册用户
