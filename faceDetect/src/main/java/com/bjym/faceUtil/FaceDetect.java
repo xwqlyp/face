@@ -4,6 +4,7 @@ package com.bjym.faceUtil;
 import com.baidu.ai.aip.utils.HttpUtil;
 import com.baidu.aip.util.Base64Util;
 import com.bjym.common.FileUtil;
+import com.google.gson.JsonObject;
 import com.baidu.ai.aip.utils.GsonUtils;
 
 import java.io.File;
@@ -16,6 +17,8 @@ import org.json.JSONObject;
  * 人脸检测与属性分析
  */
 public class FaceDetect {
+
+	private static final Class String = null;
 
 	/**
 	 * 重要提示代码中所需工具类
@@ -36,7 +39,7 @@ public class FaceDetect {
 			Map<String, Object> map = new HashMap<>();
 			map.put("image", img);
 			map.put("image_type", "BASE64");
-			map.put("face_field", "age,beauty,expression,face_shape,gender,glasses,landmark,landmark150,race,quality,eye_status,emotion,face_type");
+			map.put("face_field", "age,beauty,expression,face_shape,gender,glasses,race,quality,eye_status,emotion,face_type");
 			map.put("max_face_num", max_face_num);
 			map.put("face_type", "LIVE");
 
@@ -60,12 +63,18 @@ public class FaceDetect {
 	 */
 	public static String detect(File file, String max_face_num) {
 		try {
-			return detect(FileUtil.FileToByte(file), max_face_num);
+			String json=detect(FileUtil.FileToByte(file), max_face_num);
+			JSONObject jsonData = new JSONObject(json);
+			int error_code=jsonData.getInt("error_code");
+			if (error_code == 0 ) {
+				String result=jsonData.get("result").toString();
+				return result;
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return "查询失败";
 	}
 
 	

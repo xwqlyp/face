@@ -1,6 +1,5 @@
 package com.bjym.common;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,14 +38,16 @@ public class ImageUtils {
 			String ext = FilenameUtils.getExtension(pictureFile
 					.getOriginalFilename());
 			// 设置图片上传路径
-			String url = request.getSession().getServletContext()
-					.getRealPath("/upload");
+//			String url = request.getSession().getServletContext()
+//					.getRealPath("/upload");
+			String url = "D:/upload/";
 			// 检验文件夹是否存在
 			isFolderExists(url);
 			// 以绝对路径保存重名命后的图片
 			pictureFile.transferTo(new File(url + "/" + name + "." + ext));
 			// 装配图片地址
-			imgPath = "upload/" + name + "." + ext;
+//			imgPath = "upload" + name + "." + ext;
+			imgPath = url + name + "." + ext;
 		}
 		return imgPath;
 	}
