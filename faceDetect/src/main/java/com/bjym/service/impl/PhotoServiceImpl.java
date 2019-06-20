@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bjym.dao.PhotoMapper;
 import com.bjym.pojo.Face;
+import com.bjym.pojo.DetectFace_List;
 import com.bjym.service.PhotoService;
 
 
@@ -19,10 +20,31 @@ public class PhotoServiceImpl implements PhotoService {
 	
 
 	@Override
-	public int add(Face face) {
-		return photoMapper.insert(face);
+	public void add(Face face) {
+		 photoMapper.insert(face);
 	}
 
+	
+
+	@Override
+	public int addFace(Face face) {
+		int a=photoMapper.saveFace(face);
+		int b=photoMapper.saveFace_List(face.getFace_list());
+		if (a==1 && b==1) {
+			return 0;
+		} else {
+			return 1;
+		}
+		
+	}
+	
+	@Override
+	public int addFace_list(DetectFace_List face) {
+		int b=photoMapper.saveFace_List(face);
+		System.err.println(face);
+		
+		return b;
+	}
 	
 
 }

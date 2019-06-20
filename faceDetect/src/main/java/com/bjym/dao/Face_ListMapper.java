@@ -2,7 +2,7 @@ package com.bjym.dao;
 
 import java.util.List;
 
-import com.bjym.pojo.Face_List;
+import com.bjym.pojo.DetectFace_List;
 
 public interface Face_ListMapper {
     
@@ -12,5 +12,5 @@ public interface Face_ListMapper {
      * @param product
      * @return
      */
-    Integer save(Face_List face_list);
+    Integer save(DetectFace_List face_list);
 }

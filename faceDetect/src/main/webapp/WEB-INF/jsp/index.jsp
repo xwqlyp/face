@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="<%=basePath%>/statics/plugins/layui/css/layui.css" media="all">
   <script src="<%=basePath%>/statics/plugins/layui/layui.js"></script>
   
+  <script type="text/javascript" src="<%=basePath%>/statics/js/jquery-3.4.1.js"></script>
 </head>
 <body class="layui-layout-body">
 
@@ -62,7 +63,7 @@
           <a class="" href="javascript:;">人脸识别</a>
           <dl class="layui-nav-child">
             <dd><a href="faceDetect.do">人脸属性检测</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="table.do">列表展示</a></dd>
             <dd><a href="javascript:;">列表三</a></dd>
             <dd><a href="">超链接</a></dd>
           </dl>
@@ -83,6 +84,7 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
+    
     <div style="padding: 15px;"><rapid:block name="content">内容主体区域</rapid:block></div>
   </div>
   

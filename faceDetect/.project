@@ -3,6 +3,7 @@
 	<name>faceDetect</name>
 	<comment></comment>
 	<projects>
+		<project>face-api</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
