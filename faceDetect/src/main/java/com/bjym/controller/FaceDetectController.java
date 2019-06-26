@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FaceDetectController {
 		
 	@RequestMapping(path = "/index.do")
-	public String index() {
+	public static String index() {
 		return "index";	
 	}
 	

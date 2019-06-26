@@ -9,8 +9,9 @@
 		<artifactId>face</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<groupId>com.bjym</groupId>
 	<artifactId>faceDetect</artifactId>
-
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<dependencies>
 		<dependency>
@@ -24,5 +25,18 @@
 			<artifactId>face-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.bjym</groupId>
+			<artifactId>face-web</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<classifier>api</classifier>
+		</dependency>
+
 	</dependencies>
+
+
+
 </project>
