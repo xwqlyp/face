@@ -19,7 +19,7 @@
 		<mysql.version>8.0.11</mysql.version>
 		<commons-fileupload.version>1.4</commons-fileupload.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jackson.version>2.5.4</jackson.version>
+		<jackson.version>2.10.1</jackson.version>
 	</properties>
 
 	<dependencies>
